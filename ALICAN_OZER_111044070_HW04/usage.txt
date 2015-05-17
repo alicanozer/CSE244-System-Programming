@@ -1,0 +1,5 @@
+./doMath_"FONKSIYON"_<time(nano)>
+./turev_<serverpid>_<time(mili)> 
+./integral_<serverpid>_<time(mili)>
+
+LUTFEN FONKSiYON DEGiSKENi OLARAK x KULLANIZ=f(x)

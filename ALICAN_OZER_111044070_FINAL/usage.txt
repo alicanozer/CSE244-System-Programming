@@ -1,0 +1,5 @@
+###-USAGE iNFORMATiON-###
+[1]MMModule-->"./mmm"
+[2]VModule--->"./vm <MMM-IP>"
+[3]MainModule>"./main <MMM-IP>_<VM-IP>_<N>_<K>_<L>_<P>_<T>
+##########################################################

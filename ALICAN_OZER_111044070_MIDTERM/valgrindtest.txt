@@ -1,0 +1,238 @@
+==6449== Memcheck, a memory error detector
+==6449== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==6449== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==6449== Command: ./server sin(90)*3^5+sqrt(36)+tan(30)+cos(0)+exp(5)*2 10000
+==6449== Parent PID: 2707
+==6449== 
+--6449-- 
+--6449-- Valgrind options:
+--6449--    --suppressions=/usr/lib/valgrind/debian-libc6-dbg.supp
+--6449--    --leak-check=full
+--6449--    -v
+--6449--    --log-file=valgrindtest.txt
+--6449--    --show-possibly-lost=yes
+--6449--    --show-reachable=yes
+--6449-- Contents of /proc/version:
+--6449--   Linux version 3.11.0-19-generic (buildd@comet) (gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu8) ) #33-Ubuntu SMP Tue Mar 11 18:48:34 UTC 2014
+--6449-- Arch and hwcaps: AMD64, amd64-sse3-cx16-avx
+--6449-- Page sizes: currently 4096, max supported 4096
+--6449-- Valgrind library directory: /usr/lib/valgrind
+--6449-- Reading syms from /home/alican/Desktop/parser/server
+--6449-- Reading syms from /lib/x86_64-linux-gnu/ld-2.17.so
+--6449--   Considering /lib/x86_64-linux-gnu/ld-2.17.so ..
+--6449--   .. CRC mismatch (computed 51e60a7a wanted 521e3c74)
+--6449--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.17.so ..
+--6449--   .. CRC is valid
+--6449--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.17.so ..
+--6449--   .. CRC is valid
+--6449-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--6449--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--6449--   .. CRC mismatch (computed c436d3d9 wanted 99aa3883)
+--6449--    object doesn't have a symbol table
+--6449--    object doesn't have a dynamic symbol table
+--6449-- Scheduler: using generic scheduler lock implementation.
+--6449-- Reading suppressions file: /usr/lib/valgrind/debian-libc6-dbg.supp
+--6449-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==6449== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-6449-by-alican-on-???
+==6449== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-6449-by-alican-on-???
+==6449== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-6449-by-alican-on-???
+==6449== 
+==6449== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==6449== don't want to do, unless you know exactly what you're doing,
+==6449== or are doing some strange experiment):
+==6449==   /usr/lib/valgrind/../../bin/vgdb --pid=6449 ...command...
+==6449== 
+==6449== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==6449==   /path/to/gdb ./server
+==6449== and then give GDB the following command
+==6449==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=6449
+==6449== --pid is optional if only one valgrind process is running
+==6449== 
+--6449-- REDIR: 0x4018f40 (strlen) redirected to 0x3806e491 (???)
+--6449-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--6449--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--6449--   .. CRC mismatch (computed 826470ab wanted a8b7e9f3)
+--6449--    object doesn't have a symbol table
+--6449-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--6449--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--6449--   .. CRC mismatch (computed d4fd7975 wanted b90a895a)
+--6449--    object doesn't have a symbol table
+--6449-- REDIR: 0x4018db0 (index) redirected to 0x4c2d480 (index)
+--6449-- REDIR: 0x4018e30 (strcmp) redirected to 0x4c2e560 (strcmp)
+--6449-- Reading syms from /lib/x86_64-linux-gnu/libm-2.17.so
+--6449--   Considering /lib/x86_64-linux-gnu/libm-2.17.so ..
+--6449--   .. CRC mismatch (computed 1a228d46 wanted 46d48204)
+--6449--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.17.so ..
+--6449--   .. CRC is valid
+--6449--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.17.so ..
+--6449--   .. CRC is valid
+--6449-- Reading syms from /lib/x86_64-linux-gnu/libc-2.17.so
+--6449--   Considering /lib/x86_64-linux-gnu/libc-2.17.so ..
+--6449--   .. CRC mismatch (computed 2c8ee98b wanted da4a7364)
+--6449--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.17.so ..
+--6449--   .. CRC is valid
+--6449--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.17.so ..
+--6449--   .. CRC is valid
+--6449-- REDIR: 0x51c5980 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6449-- REDIR: 0x51c1d10 (strnlen) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6449-- REDIR: 0x51c7c50 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6449-- REDIR: 0x51c4790 (memset) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6449-- REDIR: 0x51c4740 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6449-- REDIR: 0x51c3700 (__GI_strrchr) redirected to 0x4c2d2a0 (__GI_strrchr)
+--6449-- REDIR: 0x51c1580 (strcpy) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6449-- REDIR: 0x51d02a0 (__strcpy_sse2_unaligned) redirected to 0x4c2d850 (strcpy)
+--6449-- REDIR: 0xffffffffff600400 (???) redirected to 0x3806e47d (???)
+--6449-- REDIR: 0x51c1c30 (__GI_strlen) redirected to 0x4c2d830 (__GI_strlen)
+--6449-- REDIR: 0x51bb900 (free) redirected to 0x4c2b5a0 (free)
+--6449-- REDIR: 0x51bb470 (malloc) redirected to 0x4c2a270 (malloc)
+--6449-- REDIR: 0x51c15c0 (__GI_strcpy) redirected to 0x4c2d930 (__GI_strcpy)
+--6449-- REDIR: 0x51c0130 (__GI_strcmp) redirected to 0x4c2e510 (__GI_strcmp)
+--6449-- REDIR: 0x51cbb20 (strchrnul) redirected to 0x4c300f0 (strchrnul)
+--6464-- REDIR: 0x51c3680 (strncpy) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6464-- REDIR: 0x51d08d0 (__strncpy_sse2_unaligned) redirected to 0x4c2da10 (strncpy)
+--6464-- REDIR: 0xffffffffff600000 (???) redirected to 0x3806e473 (???)
+==6464== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-6464-by-alican-on-???
+==6464== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-6464-by-alican-on-???
+==6464== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-6464-by-alican-on-???
+==6464== 
+==6464== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==6464== don't want to do, unless you know exactly what you're doing,
+==6464== or are doing some strange experiment):
+==6464==   /usr/lib/valgrind/../../bin/vgdb --pid=6464 ...command...
+==6464== 
+==6464== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==6464==   /path/to/gdb ./server
+==6464== and then give GDB the following command
+==6464==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=6464
+==6464== --pid is optional if only one valgrind process is running
+==6464== 
+--6464-- REDIR: 0x51c1be0 (strlen) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6464-- REDIR: 0x52a20e0 (__strlen_sse2_pminub) redirected to 0x4c2d810 (strlen)
+--6464-- REDIR: 0x51c00f0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6464-- REDIR: 0x52715b0 (__strcmp_sse42) redirected to 0x4c2e4c0 (strcmp)
+--6464-- REDIR: 0x51cb910 (__GI___rawmemchr) redirected to 0x4c30150 (__GI___rawmemchr)
+==6464== 
+==6464== HEAP SUMMARY:
+==6464==     in use at exit: 424,139 bytes in 9,225 blocks
+==6464==   total heap usage: 9,237 allocs, 12 frees, 427,215 bytes allocated
+==6464== 
+==6464== Searching for pointers to 9,225 not-freed blocks
+==6464== Checked 86,936 bytes
+==6464== 
+==6464== 45 bytes in 1 blocks are still reachable in loss record 1 of 5
+==6464==    at 0x4C2A2DB: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6464==    by 0x4020FC: valueWrapper (in /home/alican/Desktop/parser/server)
+==6464==    by 0x401D7E: main (in /home/alican/Desktop/parser/server)
+==6464== 
+==6464== 49 bytes in 1 blocks are still reachable in loss record 2 of 5
+==6464==    at 0x4C2A2DB: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6464==    by 0x4020FC: valueWrapper (in /home/alican/Desktop/parser/server)
+==6464==    by 0x401E00: main (in /home/alican/Desktop/parser/server)
+==6464== 
+==6464== 138,330 bytes in 3,074 blocks are definitely lost in loss record 3 of 5
+==6464==    at 0x4C2A2DB: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6464==    by 0x4020FC: valueWrapper (in /home/alican/Desktop/parser/server)
+==6464==    by 0x401D7E: main (in /home/alican/Desktop/parser/server)
+==6464== 
+==6464== 138,375 bytes in 3,075 blocks are definitely lost in loss record 4 of 5
+==6464==    at 0x4C2A2DB: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6464==    by 0x4020FC: valueWrapper (in /home/alican/Desktop/parser/server)
+==6464==    by 0x401DBE: main (in /home/alican/Desktop/parser/server)
+==6464== 
+==6464== 147,340 bytes in 3,074 blocks are definitely lost in loss record 5 of 5
+==6464==    at 0x4C2A2DB: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6464==    by 0x4020FC: valueWrapper (in /home/alican/Desktop/parser/server)
+==6464==    by 0x401E00: main (in /home/alican/Desktop/parser/server)
+==6464== 
+==6464== LEAK SUMMARY:
+==6464==    definitely lost: 424,045 bytes in 9,223 blocks
+==6464==    indirectly lost: 0 bytes in 0 blocks
+==6464==      possibly lost: 0 bytes in 0 blocks
+==6464==    still reachable: 94 bytes in 2 blocks
+==6464==         suppressed: 0 bytes in 0 blocks
+==6464== 
+==6464== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 2 from 2)
+--6464-- 
+--6464-- used_suppression:      2 dl-hack3-cond-1
+==6464== 
+==6464== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 2 from 2)
+--6478-- REDIR: 0x51c3680 (strncpy) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6478-- REDIR: 0x51d08d0 (__strncpy_sse2_unaligned) redirected to 0x4c2da10 (strncpy)
+--6478-- REDIR: 0xffffffffff600000 (???) redirected to 0x3806e473 (???)
+--6478-- REDIR: 0x51c1be0 (strlen) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6478-- REDIR: 0x52a20e0 (__strlen_sse2_pminub) redirected to 0x4c2d810 (strlen)
+--6478-- REDIR: 0x51c00f0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--6478-- REDIR: 0x52715b0 (__strcmp_sse42) redirected to 0x4c2e4c0 (strcmp)
+--6478-- REDIR: 0x51cb910 (__GI___rawmemchr) redirected to 0x4c30150 (__GI___rawmemchr)
+==6478== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-6478-by-alican-on-???
+==6478== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-6478-by-alican-on-???
+==6478== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-6478-by-alican-on-???
+==6478== 
+==6478== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==6478== don't want to do, unless you know exactly what you're doing,
+==6478== or are doing some strange experiment):
+==6478==   /usr/lib/valgrind/../../bin/vgdb --pid=6478 ...command...
+==6478== 
+==6478== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==6478==   /path/to/gdb ./server
+==6478== and then give GDB the following command
+==6478==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=6478
+==6478== --pid is optional if only one valgrind process is running
+==6478== 
+==6478== 
+==6478== HEAP SUMMARY:
+==6478==     in use at exit: 61,005 bytes in 1,332 blocks
+==6478==   total heap usage: 1,344 allocs, 12 frees, 64,081 bytes allocated
+==6478== 
+==6478== Searching for pointers to 1,332 not-freed blocks
+==6478== Checked 87,920 bytes
+==6478== 
+==6478== 45 bytes in 1 blocks are still reachable in loss record 1 of 5
+==6478==    at 0x4C2A2DB: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6478==    by 0x4020FC: valueWrapper (in /home/alican/Desktop/parser/server)
+==6478==    by 0x401D7E: main (in /home/alican/Desktop/parser/server)
+==6478== 
+==6478== 48 bytes in 1 blocks are still reachable in loss record 2 of 5
+==6478==    at 0x4C2A2DB: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6478==    by 0x4020FC: valueWrapper (in /home/alican/Desktop/parser/server)
+==6478==    by 0x401E00: main (in /home/alican/Desktop/parser/server)
+==6478== 
+==6478== 19,935 bytes in 443 blocks are definitely lost in loss record 3 of 5
+==6478==    at 0x4C2A2DB: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6478==    by 0x4020FC: valueWrapper (in /home/alican/Desktop/parser/server)
+==6478==    by 0x401D7E: main (in /home/alican/Desktop/parser/server)
+==6478== 
+==6478== 19,980 bytes in 444 blocks are definitely lost in loss record 4 of 5
+==6478==    at 0x4C2A2DB: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6478==    by 0x4020FC: valueWrapper (in /home/alican/Desktop/parser/server)
+==6478==    by 0x401DBE: main (in /home/alican/Desktop/parser/server)
+==6478== 
+==6478== 20,997 bytes in 443 blocks are definitely lost in loss record 5 of 5
+==6478==    at 0x4C2A2DB: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6478==    by 0x4020FC: valueWrapper (in /home/alican/Desktop/parser/server)
+==6478==    by 0x401E00: main (in /home/alican/Desktop/parser/server)
+==6478== 
+==6478== LEAK SUMMARY:
+==6478==    definitely lost: 60,912 bytes in 1,330 blocks
+==6478==    indirectly lost: 0 bytes in 0 blocks
+==6478==      possibly lost: 0 bytes in 0 blocks
+==6478==    still reachable: 93 bytes in 2 blocks
+==6478==         suppressed: 0 bytes in 0 blocks
+==6478== 
+==6478== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 2 from 2)
+--6478-- 
+--6478-- used_suppression:      2 dl-hack3-cond-1
+==6478== 
+==6478== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 2 from 2)
+==6449== 
+==6449== HEAP SUMMARY:
+==6449==     in use at exit: 0 bytes in 0 blocks
+==6449==   total heap usage: 11 allocs, 11 frees, 3,061 bytes allocated
+==6449== 
+==6449== All heap blocks were freed -- no leaks are possible
+==6449== 
+==6449== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+--6449-- 
+--6449-- used_suppression:      2 dl-hack3-cond-1
+==6449== 
+==6449== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
